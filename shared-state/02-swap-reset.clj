@@ -10,3 +10,7 @@
                   "Jun" nil}))
 
 (swap! users assoc "Jerlamarel" (rev-addr (get (deref users) "Jerlamarel")))
+
+(pmap
+  (fn [user] (rev-addr (second user)))
+  (deref users))
